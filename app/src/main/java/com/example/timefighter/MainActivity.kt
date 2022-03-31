@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private var gameStarted: Boolean = false
 
     private lateinit var countDownTimer: CountDownTimer
-    private var initialCountDown: Long = 60000
+    private var initialCountDown: Long = 10000
     private var countDownInterval: Long = 1000
     private var timeLeft: Int = 60
 
