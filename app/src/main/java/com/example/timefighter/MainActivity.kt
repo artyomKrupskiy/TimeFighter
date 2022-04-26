@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         timeLeftTextView = findViewById(R.id.time_left_text_view)
         tapMeButton = findViewById(R.id.tap_me_button)
 
-        tapMeButton.setOnClickListener { v->
+        tapMeButton.setOnClickListener { v ->
             val bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce)
             v.startAnimation(bounceAnimation)
             incrementScore()
@@ -64,7 +64,10 @@ class MainActivity : AppCompatActivity() {
         outState.putInt(TIME_LEFT_KEY, timeLeft)
         countDownTimer.cancel()
 
-        Log.d(TAG, "onSaveInstanceState: Saving score: Saving score: $score and Time Left: $timeLeft")
+        Log.d(
+            TAG,
+            "onSaveInstanceState: Saving score: Saving score: $score and Time Left: $timeLeft"
+        )
     }
 
     override fun onDestroy() {
@@ -80,9 +83,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.about_item) {
-            showInfo()
-        }
+        if (item.itemId == R.id.about_item) showInfo()
 
         return true
     }
@@ -99,9 +100,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun incrementScore() {
-        if (!gameStarted) {
-            startGame()
-        }
+        if (!gameStarted) startGame()
 
         score++
 
